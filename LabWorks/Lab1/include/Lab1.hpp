@@ -11,19 +11,21 @@
 #include <cmath>
 #include <map>
 
+#define MAX_10EXP9 1000000000
 
 class Lab1 {
 public:
 
-void fastExpMod(uint64_t base, uint64_t exponent, uint64_t mod, uint64_t *result);
-void euclid(int64_t a, int64_t b, int64_t *result);
-void dhProtocol(uint64_t *K1, uint64_t *K2, uint64_t max_val);
-void bgSteps(uint64_t a, uint64_t p, uint64_t y, uint64_t *result);
+    static void fastExpMod(int64_t base, int64_t exponent, int64_t mod, int64_t *result);
+    static void euclid(int64_t a, int64_t b, int64_t *result);
+    void dhProtocol(int64_t *K1, int64_t *K2);
+    static void bgSteps(int64_t a, int64_t p, int64_t y, int64_t *result);
 
-void dhGeneratePQ(uint64_t *p, uint64_t *q, uint64_t max_val);
-void dhRandKeyX(uint64_t *KeyX, uint64_t max_val);
-bool is_prime_num(const uint64_t *p);
-void generatePrime(uint64_t *p, uint64_t min_val, uint64_t max_val);
+    static void dhGeneratePQ(int64_t *p, int64_t *q, int64_t max_val);
+    static void dhRandKeyX(int64_t *KeyX, int64_t max_val);
+    static bool is_prime_num(const int64_t *p);
+    static void generatePrime(int64_t *p, int64_t min_val, int64_t max_val);
+    static void randBig(int64_t *X);
 };
 
 #endif /* _Lab1_HPP_ */
